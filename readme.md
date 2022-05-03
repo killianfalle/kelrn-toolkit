@@ -2,6 +2,10 @@
 ```bash
 npm install --save kelrn-toolkit
 ```
+or
+```bash
+yarn add kelrn-toolkit
+```
 
 ## What it offers:
 * Supports iOS and Android

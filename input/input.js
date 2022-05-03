@@ -59,7 +59,6 @@ const Input = ({
     );
 };
 
-
 /**
  * Custom Input
  * @param {string} keyboardType         : The keyboardType for textinput's keyboard             (OPTIONAL)

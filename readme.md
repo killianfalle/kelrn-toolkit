@@ -23,4 +23,5 @@ const App = () => (
 
 ## License & Copyright
 © Killian S. Falle
+
 Licensed under the [MIT License](LICENSE).

@@ -1,8 +1,22 @@
-# Getting Started with Mobile Application
-To use this package, please run `npx react-native init` to develop the app.
+# Installation
+```bash
+npm install kelrn-toolkit
+```
 
-## App Requirements
-node: v17.7.2
-npm: 8.5.2
-react-native-cli: 2.0.1
-react-native: 0.67.4
+## What it offers:
+* Supports iOS and Android
+* Easy component styling
+* Wide range of component options
+
+## Quick Start
+```js
+import { Input } from 'kelrn/toolkit';
+
+const App = () => (
+        <Input
+            keyboardType="email-address"
+            placeholder="Email"
+            onChangeText={value => console.log(value)}
+        />
+    );
+```

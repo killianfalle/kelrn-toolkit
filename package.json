@@ -1,6 +1,6 @@
 {
   "name": "kelrn-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This library is basically a toolkit for customizable UI components made by developer.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/killianfalle/react-native.git"
+    "url": "git+https://github.com/killianfalle/kelrn-toolkit.git"
   },
   "keywords": [
     "component-ui",
@@ -20,7 +20,7 @@
   "author": "Killian Falle <killianfalle7@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/killianfalle/react-native/issues"
+    "url": "https://github.com/killianfalle/kelrn-toolkit/issues"
   },
-  "homepage": "https://github.com/killianfalle/react-native#readme"
+  "homepage": "https://github.com/killianfalle/kelrn-toolkit#readme"
 }

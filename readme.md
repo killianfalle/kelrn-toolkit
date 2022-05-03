@@ -1,6 +1,6 @@
 # Installation
 ```bash
-npm install kelrn-toolkit
+npm install --save kelrn-toolkit
 ```
 
 ## What it offers:
@@ -13,10 +13,14 @@ npm install kelrn-toolkit
 import { Input } from 'kelrn/toolkit';
 
 const App = () => (
-        <Input
-            keyboardType="email-address"
-            placeholder="Email"
-            onChangeText={value => console.log(value)}
-        />
-    );
+    <Input
+        keyboardType="email-address"
+        placeholder="Email"
+        onChangeText={value => console.log(value)}
+    />
+);
 ```
+
+## License & Copyright
+© Killian S. Falle
+Licensed under the [MIT License](LICENSE).

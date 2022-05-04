@@ -1,6 +1,6 @@
 {
-  "name": "@killianfalle/kelrn-toolkit",
-  "version": "1.1.2",
+  "name": "kelrn-toolkit",
+  "version": "1.2.1",
   "description": "This library is basically a toolkit for customizable UI components made by developer.",
   "main": "index.js",
   "scripts": {

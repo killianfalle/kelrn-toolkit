@@ -1,4 +1,4 @@
-import Input from './src/input/input';
+import Input from './input/input';
 
 export {
     Input

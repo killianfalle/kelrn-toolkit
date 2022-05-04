@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { 
     View, 
     TextInput,
     TouchableOpacity
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import InputStyles from '../../assets/styles/input/input-styles';
+import InputStyles from '../assets/styles/input/input-styles';
 
 const Input = ({
-    keyboardType, 
+    keyboardType,
+    secureIcon,
     icon,
     iconPosition,
     placeholder, 
     onSubmitEditing, 
     onChangeText, 
-    secureTextEntry, 
+    secureTextEntry,
+    showInput,
+    setShowInput,
     inputRef,
     value
 }) => {
-    const [showPassword, setShowPassword] = useState(false);
     const handleChangeText = (value) => onChangeText(value);
 
     return (
@@ -32,7 +34,7 @@ const Input = ({
             <TextInput
                 ref={inputRef}
                 value={value}
-                secureTextEntry={secureTextEntry && !showPassword}
+                secureTextEntry={secureTextEntry && !showInput}
                 keyboardType={keyboardType}
                 style={InputStyles.input}
                 placeholder={placeholder}
@@ -47,12 +49,13 @@ const Input = ({
                     {icon}
                 </View>
             )}
+
             {secureTextEntry && 
                 <TouchableOpacity
                     style={InputStyles.inputToggleIcon}
-                    onPress={() => setShowPassword(!showPassword)}
+                    onPress={() => setShowInput(!showInput)}
                 >
-                    <Icon name={showPassword ? 'eye-off' : 'eye-outline'} size={16} color="#000"/>
+                    {secureIcon}
                 </TouchableOpacity>
             }
         </View>
@@ -62,11 +65,15 @@ const Input = ({
 /**
  * Custom Input
  * @param {string} keyboardType         : The keyboardType for textinput's keyboard             (OPTIONAL)
- * @param {string} onChangeText         : Returns the state when input changes                  (OPTIONAL)
  * @param {object} icon                 : Inner icon for the input field                        (OPTIONAL)
- * @param {string} iconPosition         : ["left" or "right"] position for icon                 (Default: Left)
- * @param {action} onSubmitEditing      : Triggered when you click the text input submit button (keyboard button)(OPTIONAL)
+ * @param {object} secureIcon           : Inner icon for the secured input field                (OPTIONAL)
+ * @param {string} iconPosition         : ["left" or "right"] position for icon                 (Default: "left")
  * @param {boolean} secureTextEntry     : If true, the text input obscures the text entered so that sensitive text like passwords stay secure
+ * @param {boolean} showInput           : Boolean if to show input value or not                 (Default: false)
+ * @param {action} onChangeText         : Returns the state when input changes                  (OPTIONAL)
+ * @param {action} onSubmitEditing      : Triggered when you click the text input submit button (keyboard button)(OPTIONAL)
+ * @param {action} setShowInput         : Returns boolean when pressing the secure buttion      (OPTIONAL)
+ * 
  */
 Input.propTypes = {
     value: PropTypes.string,
@@ -74,10 +81,13 @@ Input.propTypes = {
     placeholder: PropTypes.string,
     inputRef: PropTypes.object,
     icon: PropTypes.object,
+    secureIcon: PropTypes.object,
     iconPosition: PropTypes.string,
     secureTextEntry: PropTypes.bool,
+    showInput: PropTypes.bool,
     onChangeText: PropTypes.func,
-    onSubmitEditing: PropTypes.func
+    onSubmitEditing: PropTypes.func,
+    setShowInput: PropTypes.func
   };
   
   Input.defaultProps = {
@@ -86,10 +96,13 @@ Input.propTypes = {
     placeholder: "",
     inputRef: null,
     icon: null,
+    secureIcon: null,
     iconPosition: "left",
     secureTextEntry: false,
+    showInput: false,
     onChangeText: () => {},
-    onSubmitEditing: () => {}
+    onSubmitEditing: () => {},
+    setShowInput: () => {}
   };
   
   export default Input;
